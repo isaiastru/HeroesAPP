@@ -1,0 +1,36 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav mode="push">
+    <mat-toolbar>
+      <span>Menú</span>
+      <span class="spacer"></span>
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-list>
+      <a routerLink="./listado" mat-list-item>
+        <mat-icon>label</mat-icon>Listado</a
+      >
+    </mat-list>
+    <mat-list>
+      <a routerLink="./agregar" mat-list-item>
+        <mat-icon>add</mat-icon>Agregar</a
+      >
+    </mat-list>
+    <mat-list>
+      <a routerLink="./buscar" mat-list-item>
+        <mat-icon>search</mat-icon>Buscar</a
+      >
+    </mat-list>
+  </mat-sidenav>
+  <mat-toolbar>
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <span class="spacer"></span>
+    <span>{{ auth.usuario }}</span>
+    <button (click)="salir()">LogOut</button>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+</mat-sidenav-container>
